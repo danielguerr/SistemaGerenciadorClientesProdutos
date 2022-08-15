@@ -32,7 +32,7 @@ namespace Cadastro
         {
             services.AddControllersWithViews();
             services.AddDbContext<DataContext>(
-                options => options.UseSqlServer("Password=Valente123*;Persist Security Info=True;User ID=sa;Data Source=DESKTOP-C9VIIEM;Database=Cadastro"));
+                options => options.UseSqlServer("Password=NULL;Persist Security Info=True;User ID=NULL;Data Source=NULL;Database=Cadastro"));
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IClientService, ClientService>();
