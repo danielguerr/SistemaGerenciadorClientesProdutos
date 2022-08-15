@@ -1,0 +1,13 @@
+﻿@model Cadastro.Models.Products.ProductDeleteViewModel
+@{
+    ViewData["Title"] = "Confirmação Apagar Produto";
+}
+
+<div class="text-center">
+    <h3 class="display-4">Deseja apagar o produto?</h3>
+</div>
+
+<br />
+
+<a class="btn btn-danger btn-block" role="button" asp-controller="Products" asp-action="Index">Cancelar</a>
+<a class="btn btn-primary btn-block" role="button" asp-controller="Products" asp-action="Delete">Confirmar</a>

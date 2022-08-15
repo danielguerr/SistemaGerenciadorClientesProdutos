@@ -1,0 +1,30 @@
+﻿@model Cadastro.Models.Products.ProductCreateViewModel
+@{
+    ViewData["Title"] = "Cadastrar Cliente";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Cadastro de Produtos</h1>
+
+</div>
+
+<form asp-controller="Products" asp-action="CreateProduct" method="post">
+    <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" asp-for="Name" class="form-control" placeholder="Digite o nome do Produto">
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Valor</label>
+        <input type="text" asp-for="Value" class="form-control" placeholder="Digite o valor do Produto">
+    </div>
+
+    <div class="form-group">
+        <label for="idCliente">Id Client</label>
+        <input type="text" asp-for="idClient" class="form-control" placeholder="Digite o Id do Cliente">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Products" asp-action="Index" role="button">Voltar</a>
+</form>

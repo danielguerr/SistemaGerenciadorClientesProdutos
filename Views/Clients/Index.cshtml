@@ -1,0 +1,49 @@
+﻿@model List<Client>
+@{
+    ViewData["Title"] = "Listagem de Clientes";
+}
+
+<div class="text-center">
+
+    <div class="d-grip gap-2 d-md-flex justify-content-md-start">
+        <a style="color: white;" class="btn btn-success" role="button" asp-controller="Clients" asp-action="Create">Adicionar novo Cliente</a>
+    </div>
+
+    <h1 class="display-4">Listagem de Clientes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Data de Cadastro</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Ativo</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (Client client in Model)
+                {
+            <tr>
+                <th scope="row">@client.Id</th>
+                <td>@client.Name</td>
+                <td>@client.LastName</td>
+                <td>@client.Date</td>
+                <td>@client.Email</td>
+                <td>@client.Active</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a style="color: white;" role="button" class="btn btn-primary" asp-route-id="@client.Id" asp-controller="Clients" asp-action="Edit">Editar</a>
+                        <a style="color: white;" role="button" class="btn btn-danger" asp-route-id="@client.Id" asp-controller="Clients" asp-action="Delete">Apagar</a>
+                    </div>
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
